@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ApiUrl } from '../../../environments/api-url';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -10,6 +10,22 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   postRegister(bodyRegister: any) {
-return this.http.post(`${this.apiUrl}/register`, bodyRegister)
+    return this.http.post(`${this.apiUrl}/register`, bodyRegister)
   };
+
+
+
+  header() {
+    const token = sessionStorage.getItem('token')
+    const headers = new HttpHeaders({
+      'authorization': `Bearer ${token}`
+    })
+    return headers
+  };
+
+
+  getUsers() {
+    const headers = this.header()
+    return this.http.get(`${this.apiUrl}/users`, { headers })
+  }
 }

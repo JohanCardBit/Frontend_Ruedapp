@@ -1,0 +1,28 @@
+/*           HEADER                 */
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, #542dc3, #1e2a78);
+    color: wheat;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.panel-header h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.search {
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    font-size: 0.9rem;
+}
+/*              FIN HEADER           */
+
+

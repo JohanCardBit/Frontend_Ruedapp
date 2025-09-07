@@ -45,6 +45,8 @@ export class Login {
           });
         },
         error(error: any) {
+          console.log(error);
+          
           flashy(`${error.error.msj}`, {
             type: 'error',
             position: 'bottom-right',
