@@ -1,0 +1,142 @@
+.logo {
+    width: 100px;
+    position: absolute;
+    top: -2px;
+
+}
+
+
+.body {
+    margin: 0;
+    width: 100vw;
+    height: 95vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    background-image: url('/dash.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    background-color: rgba(28, 15, 59, 0.671);
+    gap: 20px;
+    padding: 2rem;
+}
+
+
+
+
+
+
+
+
+
+.sidebar {
+    height: 70%;
+    background: rgba(20, 20, 40, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.4);
+    gap: 23px;
+}
+
+.butonsillo {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+
+
+.butonsillo:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: scale(1.1);
+}
+
+
+.butonsillo:active {
+    transform: scale(0.92);
+    box-shadow: 0 0 10px rgba(155, 8, 229, 0.895);
+}
+
+
+
+.tooltip {
+    position: absolute;
+    bottom: 55%;
+    transform: translateY(-50%);
+    background-color: #2c2c547b;
+    color: wheat;
+    padding: 3px 5px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease;
+    z-index: 10;
+}
+
+
+.butonsillo:hover .tooltip {
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.contenedor {
+    height: 80%;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: inset 0 0 30px rgba(128, 0, 255, 0.2);
+    overflow-y: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+    width: 100vw;
+    height: 5vh;
+    background: linear-gradient(333deg, rgb(10, 5, 22) 0%, rgb(1, 0, 2) 100%);
+    color: rgba(128, 128, 128, 0.266);
+}

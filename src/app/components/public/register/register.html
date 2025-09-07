@@ -1,0 +1,47 @@
+<section class="body col-12 justify-content-center p-5">
+    <button class="home"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            stroke-width="2" width="24" height="24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3 9.75L12 3l9 6.75V20a1 1 0 01-1 1h-5.25a.75.75 0 01-.75-.75V14a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75v6.25a.75.75 0 01-.75.75H4a1 1 0 01-1-1V9.75z" />
+        </svg>
+    </button>
+    <div class="card-register d-flex flex-row align-items-center">
+
+        <!-- Logo y subtítulo -->
+        <div class="imglogo text-center logo-section">
+            <img class="w-100" src="/logoruedapp.png" alt="logo" />
+            <p class="subtitle-logo mt-3">¡Únete a RuedApp y movilizate por la ciudad fácilmente!</p>
+        </div>
+
+        <!-- Formulario Register -->
+        <div class="form-register form-section px-5">
+            <h3 class="mb-4">Crear Cuenta</h3>
+
+            <form [formGroup]="formRegister">
+                <div class="input-group">
+                    <input formControlName="nombre" type="text" placeholder="Nombre" required />
+                </div>
+                <div class="input-group">
+                    <input formControlName="apellido" type="text" placeholder="Apellido" required />
+                </div>
+                <div class="input-group">
+                    <input formControlName="correo" type="email" placeholder="Correo electrónico" required />
+                </div>
+                <div class="input-group">
+                    <input formControlName="password" type="password" placeholder="Contraseña" required />
+                </div>
+
+                <button (click)="register()" type="submit" class="btn-register">Registrarse</button>
+            </form>
+
+            <div class="extras-register mt-3">
+                <p>¿Ya tienes cuenta? <a routerLink="/login">Iniciar Sesión</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer-login d-flex flex-column align-items-center">
+    <p class="mt-3">© 2025 RuedApp. Todos los derechos reservados.</p>
+
+</footer>

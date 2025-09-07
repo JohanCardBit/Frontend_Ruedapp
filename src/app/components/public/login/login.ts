@@ -4,9 +4,10 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { Router, RouterLink } from '@angular/router';
 import flashy from '@pablotheblink/flashyjs';
 
+
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule, ],
+  imports: [ReactiveFormsModule, RouterLink],
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
@@ -39,7 +40,7 @@ export class Login {
               console.log('Notificación clickeada');
             },
             onClose: () => {
-              // this.router.navigate(['//']);
+              this.router.navigate(['/dashboard']);
             },
           });
         },

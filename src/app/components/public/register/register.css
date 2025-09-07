@@ -26,54 +26,51 @@
 }
 
 
+
 .body {
     margin: 0;
     width: 100vw;
     height: 95vh;
-    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-sizing: border-box;
-    background-image: url('/fondo3.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: rgba(10, 5, 22, 0.274) url('/fondo3.jpeg') center/cover no-repeat;
     background-blend-mode: overlay;
-    background-color: rgba(10, 5, 22, 0.274);
+    box-sizing: border-box;
+    overflow: hidden;
+
 }
 
 
-.card-login {
+.card-register {
     position: relative;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
     padding: 2.5rem;
-    max-width: 420px;
+    max-width: 900px;
     width: 100%;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     background: rgba(255, 255, 255, 0.06);
-    box-shadow: 0 0 30px rgba(128, 0, 255, 0.4),
-        0 0 60px rgba(78, 8, 243, 0.2) inset;
+    box-shadow: 0 0 30px rgba(128, 0, 255, 0.4), 0 0 60px rgba(78, 8, 243, 0.2) inset;
     color: white;
-    text-align: center;
     overflow: hidden;
     z-index: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+
 }
 
 
-.card-login::before {
+.card-register::before {
     content: "";
     position: absolute;
-    top: -25px;
-    left: -25px;
-    right: -25px;
-    bottom: -25px;
+    inset: -25px;
     border-radius: 25px;
     background: radial-gradient(circle at center,
-            rgba(155, 0, 255, 0.35) 0%,
-            transparent 70%);
+            rgba(155, 0, 255, 0.35) 0%, transparent 70%);
     filter: blur(35px);
     z-index: -1;
     animation: glowPulse 6s ease-in-out infinite alternate;
@@ -92,29 +89,41 @@
 }
 
 
-.imglogo img {
+
+.logo-section {
+    flex: 0 0 40%;
+    text-align: center;
+}
+
+.logo-section img {
+    width: 100%;
     filter: drop-shadow(0 0 8px rgba(128, 0, 255, 0.5));
 }
 
+.subtitle-logo {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 1rem;
+    font-weight: 500;
+}
 
-.form-login {
+
+.form-section {
+    flex: 0 0 60%;
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
+    text-align: center;
 }
 
-.form-login h2 {
-    font-size: 1.8rem;
+.form-section h3 {
+    font-size: 1.6rem;
     font-weight: 700;
-    color: #fff;
     letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+
 }
 
-
-.input-group {
-    width: 100%;
-    margin-bottom: 1.3rem;
-}
 
 .input-group input {
     width: 100%;
@@ -126,10 +135,13 @@
     font-size: 1rem;
     outline: none;
     transition: 0.3s ease-in-out;
+    margin-bottom: 1rem;
+
 }
 
 .input-group input::placeholder {
     color: rgba(255, 255, 255, 0.6);
+
 }
 
 .input-group input:focus {
@@ -139,7 +151,7 @@
 }
 
 
-.btn-login {
+.btn-register {
     width: 100%;
     padding: 1rem;
     border: none;
@@ -153,31 +165,29 @@
     transition: all 0.3s ease;
 }
 
-.btn-login:hover {
+.btn-register:hover {
     background: linear-gradient(135deg, #6c3df5, #2538a1);
     box-shadow: 0 0 18px rgba(128, 0, 255, 0.8);
     transform: translateY(-3px);
 }
 
 
-.extras-login {
-    margin-top: 1.5rem;
+.extras-register {
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.8);
 }
 
-.extras-login a {
+.extras-register a {
     color: #9b7dff;
     font-weight: 500;
     text-decoration: none;
     transition: 0.3s;
 }
 
-.extras-login a:hover {
+.extras-register a:hover {
     color: #c5afff;
     text-decoration: underline;
 }
-
 
 .footer-login {
     width: 100vw;
