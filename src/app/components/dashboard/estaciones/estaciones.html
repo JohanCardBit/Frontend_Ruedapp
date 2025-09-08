@@ -7,9 +7,102 @@
 
 <div class="d-flex gap-4 flex-wrap justify-content-around">
     @for (item of dataEstaciones; track $index) {
+    @if (item.activo === true) {
     <app-card-admin 
-    [data]="item">
-
+    [data]="item" 
+    (editEstacion)="editEstacion(item._id)" 
+    (abrirEstado)="abrirModalEstado($event)">
     </app-card-admin>
+        }
+
     }
+</div>
+
+
+<div class="MODALES EDIT ESTACION">
+    <!-- Modal PARA EDITAR ESTACION -->
+    <div class="modal fade" id="modalEditarEstacion" tabindex="-1" aria-labelledby="modalEditarEstacionLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content custom-modal-content">
+
+                <!-- Header -->
+                <div class="modal-header custom-modal-header">
+                    <h5 class="modal-title" id="modalEditarEstacionLabel">Editar Estación</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+
+                <!-- Body -->
+                <div class="modal-body">
+                    <form [formGroup]="formEstaciones" class="form-card">
+                        <!-- Nombre -->
+                        <div class="form-group mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input formControlName="nombre" id="nombre" type="text" class="form-control custom-input"
+                                placeholder="Ej: Estación Centro" />
+                        </div>
+
+                        <!-- Dirección -->
+                        <div class="form-group mb-3">
+                            <label for="direccion" class="form-label">Dirección</label>
+                            <input formControlName="direccion" id="direccion" type="text"
+                                class="form-control custom-input" placeholder="Ej: Calle 123 #45-67" />
+                        </div>
+
+                        <!-- Capacidad -->
+                        <div class="form-group mb-3">
+                            <label for="capacidad" class="form-label">Capacidad</label>
+                            <input formControlName="capacidad" id="capacidad" type="number"
+                                class="form-control custom-input" placeholder="Ej: 25" />
+                        </div>
+
+                        <!-- Foto -->
+                        <div class="form-group mb-4">
+                            <label for="foto" class="form-label">Foto</label>
+                            <input formControlName="foto" id="foto" type="text" class="form-control custom-input"
+                                placeholder="URL de la foto" />
+                        </div>
+
+                        <!-- Botones -->
+                        <div class="d-flex justify-content-between">
+                            <button (click)="updateEstacion()" type="submit" data-bs-dismiss="modal"
+                                class="btn save">Guardar</button>
+                            <button type="button" class="btn cancel" data-bs-dismiss="modal">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal CAMBIAR ESTADO -->
+    <div class="modal fade" id="modalCambiarEstado" tabindex="-1" aria-labelledby="modalCambiarEstadoLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content custom-modal-content">
+
+
+                <div class="modal-header custom-modal-header">
+                    <h5 class="modal-title" id="modalCambiarEstadoLabel">Confirmar acción</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+
+
+                <div class="modal-body text-center">
+                    <p class="mb-3">Seguro que deseas <strong>cambiar el estado</strong> de esta estación?</p>
+                    <p class="estado-msg">Pasara a <span class="badge bg-danger">Inactivo</span></p>
+                </div>
+
+
+                <div class="modal-footer d-flex justify-content-center gap-3">
+                    <button type="button" class="btn cancel" data-bs-dismiss="modal">Cancelar</button>
+                    <button (click)="putEstadoEstacion(idEstacionSeleccionada!)" type="button" class="btn save" id="btnConfirmarCambio" data-bs-dismiss="modal">Sí,
+                        cambiar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>

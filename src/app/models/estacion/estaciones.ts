@@ -1,11 +1,11 @@
 export interface Estaciones {
     _id?: string;
     nombre: string;
-    ubicacion: {
-        direccion?: string;
-        latitud: number;
-        longitud: number;
-    };
+
+    direccion?: string;
+    latitud: number;
+    longitud: number;
+
     capacidad?: number;
     bicicletasDisponibles?: number;
     bicicletas?: {

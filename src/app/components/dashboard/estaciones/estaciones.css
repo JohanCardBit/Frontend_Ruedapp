@@ -26,3 +26,74 @@
 /*              FIN HEADER           */
 
 
+
+
+
+
+
+
+
+
+
+/*  !         MODAL EDIT ESTACION                */
+.custom-modal-content {
+    background: rgba(95, 61, 196, 0.25);
+    backdrop-filter: blur(14px);
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 20px;
+}
+
+
+.custom-modal-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.custom-modal-header .modal-title {
+    font-weight: bold;
+    color: white;
+}
+
+
+.custom-input {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+
+.custom-input:focus {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 8px rgba(155, 125, 255, 0.6);
+    color: white;
+}
+
+
+.btn.save {
+    background: linear-gradient(135deg, #00c2ff, #0056ff);
+    color: white;
+    border-radius: 12px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn.save:hover {
+    box-shadow: 0 0 12px rgba(0, 86, 255, 0.7);
+}
+
+.btn.cancel {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+.btn.cancel:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+/*  !      FIN   MODAL EDIT ESTACION                */
+
+

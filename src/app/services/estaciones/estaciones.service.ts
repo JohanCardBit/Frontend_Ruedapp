@@ -22,4 +22,19 @@ export class EstacionesService {
     const headers = this.header()
     return this.http.get(`${this.apiUrl}/estaciones`, { headers })
   }
+
+  updateEstacion(body: any, id: any) {
+    const headers = this.header()
+    return this.http.put(`${this.apiUrl}/estacion/update/${id}`, body, { headers })
+  }
+
+  getOneEstacion(id: any) {
+    const headers = this.header()
+    return this.http.get(`${this.apiUrl}/estacion/${id}`, { headers })
+  }
+
+  putEstado(id: any){
+    const headers = this.header()
+    return this.http.put(`${this.apiUrl}/estacion/estado/${id}`, {}, {headers})
+  }
 }

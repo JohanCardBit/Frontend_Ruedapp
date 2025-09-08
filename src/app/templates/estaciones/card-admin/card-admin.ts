@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Estaciones } from '../../../models/estacion/estaciones';
 
 @Component({
@@ -9,4 +9,18 @@ import { Estaciones } from '../../../models/estacion/estaciones';
 })
 export class CardAdmin {
   @Input() data!: Estaciones
+
+  @Output() editEstacion = new EventEmitter;
+  editarEstacion() {
+    this.editEstacion.emit()
+  }
+
+  @Output() abrirEstado = new EventEmitter<string>();
+
+  abrirModalEstado(id: string) {
+    this.abrirEstado.emit(id);
+  }
+
+
+
 }
