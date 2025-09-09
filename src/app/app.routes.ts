@@ -6,6 +6,7 @@ import { Panel } from './components/panel/panel';
 import { Inicio } from './components/panel/inicio/inicio';
 import { Estaciones } from './components/dashboard/estaciones/estaciones';
 import { Misusuarios } from './components/dashboard/misusuarios/misusuarios';
+import { Bicicletas } from './components/dashboard/bicicletas/bicicletas';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -15,7 +16,8 @@ export const routes: Routes = [
     {
         path: 'dashboard/admin', component: Dashboard, title: 'RuedApp | Admin', children: [
             { path: 'estaciones', component: Estaciones, title: 'RuedApp | Admin estaciones ' },
-            { path: 'usuarios', component: Misusuarios, title: 'RuedApp | Admin usuarios' }
+            { path: 'usuarios', component: Misusuarios, title: 'RuedApp | Admin usuarios' },
+            { path: 'patinetas', component: Bicicletas, title: 'RuedApp | Admin patinetas' }
         ]
     },
 

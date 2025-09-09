@@ -1,0 +1,154 @@
+<div class="panel-header mb-4 d-flex justify-content-between align-items-center">
+    <h1 class="titulo-seccion">
+        Patinetas
+    </h1>
+
+    <div class="search-box">
+        <input type="text" class="search form-control" placeholder="Buscar patineta...">
+    </div>
+</div>
+
+<div class="SECCIONES PATINETAS row mt-4">
+
+    <div class="col-md-4">
+        <div class="panel-section">
+            <h2 class="section-title"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                    fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" stroke="#22c55e" stroke-width="2" fill="#22c55e22" />
+                    <path d="M9 12l2 2 4-4" stroke="#22c55e" />
+                </svg>
+                Disponibles
+            </h2>
+
+            <div class="patinetas-list d-flex justify-content-around">
+                @for (item of dataBicis; track $index) {
+                @if (item.estado == "disponible") {
+                <app-patineta 
+                [data]="item"
+                (editPatineta)="editPatineta(item._id)">
+                </app-patineta>
+                }
+                }
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="panel-section">
+            <h2 class="section-title"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                    fill="none" stroke="#eab308" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" stroke="#eab308" stroke-width="2" fill="#eab30822" />
+                    <path d="M12 6v6l3 3" stroke="#eab308" />
+                </svg>
+                En uso</h2>
+            <div class="patinetas-list d-flex justify-content-around">
+                @for (item of dataBicis; track $index) {
+                @if (item.estado == "en uso") {
+                <app-patineta [data]="item">
+                </app-patineta>
+                }
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="panel-section">
+            <h2 class="section-title"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 48 48"
+                    fill="none">
+                    <circle cx="24" cy="24" r="22" fill="#fee2e2" stroke="#ef4444" stroke-width="3" />
+                    <path d="M30 16a6 6 0 0 0-8 8l-7 7a2.5 2.5 0 0 0 3.5 3.5l7-7a6 6 0 0 0 8-8l-3 3-3-3 3-3z"
+                        stroke="#ef4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                </svg>
+                En mantenimiento</h2>
+            <div class="patinetas-list  d-flex justify-content-around">
+                @for (item of dataBicis; track $index) {
+                @if (item.estado == "en mantenimiento") {
+                <app-patineta [data]="item">
+                </app-patineta>
+                }
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="MODALES EDIT ESTACION">
+    <!-- Modal PARA EDITAR ESTACION -->
+    <div class="modal fade" id="modalEditarPatineta" tabindex="-1" aria-labelledby="modalEditarPatineta"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content custom-modal-content">
+
+                <div class="modal-header custom-modal-header">
+                    <h5 class="modal-title" id="modalEditarPatineta">Editar patineta</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <form [formGroup]="formPatineta" class="form-card">
+
+                        <div class="form-group mb-3">
+                            <label for="nombre" class="form-label">Estacion</label>
+                            <input formControlName="estacion" id="nombre" type="text" class="form-control custom-input"
+                                placeholder="Ej: Estación Centro" />
+                        </div>
+
+
+                        <div class="form-group mb-3">
+                            <label for="capacidad" class="form-label">Serial</label>
+                            <input formControlName="serial" id="capacidad" type="text"
+                                class="form-control custom-input" placeholder="Ej: BICI-1" />
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="direccion" class="form-label">Estado</label>
+                            <select class="form-select" name="estado" formControlName="estado" required>
+                                <option value="en uso">En uso</option>
+                                <option value="disponible">Disponible</option>
+                                <option value="en mantenimiento">En mantenimiento</option>
+                            </select>
+                        </div>
+
+                        <!-- Botones -->
+                        <div class="d-flex justify-content-between">
+                            <button (click)="updatePatineta()" type="submit" data-bs-dismiss="modal" class="btn save">Guardar</button>
+                            <button type="button" class="btn cancel" data-bs-dismiss="modal">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal CAMBIAR ESTADO -->
+    <div class="modal fade" id="modalEliminarPatineta" tabindex="-1" aria-labelledby="modalEliminarPatineta"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content custom-modal-content">
+
+
+                <div class="modal-header custom-modal-header">
+                    <h5 class="modal-title" id="modalEliminarPatineta">Confirmar accion</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+
+
+                <div class="modal-body text-center">
+                    <p class="mb-3">Seguro que deseas <strong>cambiar el estado</strong> de esta patineta?</p>
+                    <p class="estado-msg">Pasara a <span class="badge bg-danger">Inactivo</span></p>
+                </div>
+
+
+                <div class="modal-footer d-flex justify-content-center gap-3">
+                    <button type="button" class="btn cancel" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn save" id="btnConfirmarCambio"
+                        data-bs-dismiss="modal">Confirmar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+import { Injectable } from '@angular/core';
+import { ApiUrl } from '../../environments/api-url';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class BicicletasService {
+  private apiUrl: string = ApiUrl.url
+  constructor(private http: HttpClient) { }
+
+  private header() {
+    const token = sessionStorage.getItem('token');
+    const headers = new HttpHeaders({
+      'authorization': `Bearer ${token}`
+    });
+    return headers;
+  }
+
+  getBicis() {
+    const headers = this.header()
+    return this.http.get(`${this.apiUrl}/bicicletas`, { headers })
+  };
+
+  getOneBici(id: any) {
+    const headers = this.header();
+    return this.http.get(`${this.apiUrl}/bicicleta/one/${id}`, { headers })
+  };
+
+  putBici(body: any, id: any) {
+    const headers = this.header()
+    return this.http.put(`${this.apiUrl}/bicicleta/update/${id}`, body, { headers })
+  }
+
+}
