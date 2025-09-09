@@ -31,7 +31,7 @@ export class Login {
           flashy(`Bienvenido nuevamente ${dataApi.Welcome}!`, {
             type: 'success',
             position: 'bottom-right',
-            duration: 4000,
+            duration: 2000,
             closable: true,
             animation: 'bounce',
             theme: 'dark',
@@ -40,7 +40,7 @@ export class Login {
               console.log('Notificación clickeada');
             },
             onClose: () => {
-              this.router.navigate(['/dashboard']);
+              this.router.navigate(['/dashboard/admin/estaciones']);
             },
           });
         },

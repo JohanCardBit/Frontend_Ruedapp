@@ -11,8 +11,13 @@ export class Patineta {
   @Input() data!: DataBicicletas
 
   @Output() editPatineta = new EventEmitter
-  
-  editarPatineta(){
+  Patineta() {
     this.editPatineta.emit()
   }
+
+  @Output() deletearPatineta = new EventEmitter
+  eliminarPatineta() {
+    this.deletearPatineta.emit(this.data._id);
+  }
+
 }

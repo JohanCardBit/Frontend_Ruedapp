@@ -30,6 +30,12 @@ export class BicicletasService {
   putBici(body: any, id: any) {
     const headers = this.header()
     return this.http.put(`${this.apiUrl}/bicicleta/update/${id}`, body, { headers })
-  }
+  };
 
+  deleteBici(id: any) {
+    const headers = this.header()
+    return this.http.delete(`${this.apiUrl}/bicicleta/delete/${id}`, { headers })
+  };
+
+  
 }

@@ -4,10 +4,10 @@
     <p class="serial">{{data.serial}}</p>
     <p class="estacion">Estacion:<br> <strong>{{data.estacion.nombre}}</strong></p>
     <div class="btones-modal d-flex gap-2 justify-content-center">
-        <button (click)="editarPatineta()" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditarPatineta">
+        <button (click)="Patineta()" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditarPatineta">
             E
         </button>
-        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalEliminarPatineta">
+        <button (click)="Patineta()" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalEliminarPatineta">
             D
         </button>
     </div>

@@ -16,6 +16,7 @@ export class Estaciones {
   estacionesService = inject(EstacionesService)
   formEstaciones!: FormGroup
   idEstaciones!: ""
+  idEstacionSeleccionada: string | null = null;
 
 
   constructor(private router: Router, private fb: FormBuilder) {
@@ -115,7 +116,6 @@ export class Estaciones {
     });
   }
 
-  idEstacionSeleccionada: string | null = null;
   abrirModalEstado(id: string) {
     this.idEstacionSeleccionada = id;
   }
@@ -127,16 +127,6 @@ export class Estaciones {
     this.estacionesService.getEstaciones().subscribe({
       next: (dataApi: any) => {
         this.dataEstaciones = dataApi
-        flashy(`${dataApi.length} Estaciones cargadas correctamente!`, {
-          type: 'success',
-          position: 'bottom-right',
-          duration: 4000,
-          closable: true,
-          animation: 'bounce',
-          theme: 'dark',
-          icon: '<svg xmlns="http://www.w3.org/2000/svg"       fill="none"       viewBox="0 0 24 24"       stroke-width="2"       stroke="currentColor"       style="width:24px;height:24px;color:#22c55e;">   <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>   <path stroke-linecap="round" stroke-linejoin="round"          d="M9 12l2 2 4-4" /> </svg>',
-
-        });
       },
 
       error: (error: any) => {
