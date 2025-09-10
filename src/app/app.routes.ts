@@ -7,6 +7,7 @@ import { Inicio } from './components/panel/inicio/inicio';
 import { Estaciones } from './components/dashboard/estaciones/estaciones';
 import { Misusuarios } from './components/dashboard/misusuarios/misusuarios';
 import { Bicicletas } from './components/dashboard/bicicletas/bicicletas';
+import { Crear } from './components/dashboard/crear/crear';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -14,10 +15,11 @@ export const routes: Routes = [
     { path: 'register', component: Register, title: 'RuedApp | Registrarse' },
 
     {
-        path: 'dashboard/admin', component: Dashboard, title: 'RuedApp | Admin', children: [
-            { path: 'estaciones', component: Estaciones, title: 'RuedApp | Admin estaciones ' },
-            { path: 'usuarios', component: Misusuarios, title: 'RuedApp | Admin usuarios' },
-            { path: 'patinetas', component: Bicicletas, title: 'RuedApp | Admin patinetas' }
+        path: 'dashboard/admin', component: Dashboard, title: 'Ruedapp | Admin', children: [
+            { path: 'estaciones', component: Estaciones, title: 'Ruedapp | Admin estaciones ' },
+            { path: 'usuarios', component: Misusuarios, title: 'Ruedapp | Admin usuarios' },
+            { path: 'patinetas', component: Bicicletas, title: 'Ruedapp | Admin patinetas' },
+            { path: 'crear', component: Crear, title: 'Ruedapp | Admin crear' }
         ]
     },
 

@@ -37,4 +37,9 @@ export class EstacionesService {
     const headers = this.header()
     return this.http.put(`${this.apiUrl}/estacion/estado/${id}`, {}, {headers})
   }
+
+  postEstacion(bodyEstacion: any){
+    const headers = this.header()
+    return this.http.post(`${this.apiUrl}/estacion/create`, bodyEstacion, {headers})
+  }
 }

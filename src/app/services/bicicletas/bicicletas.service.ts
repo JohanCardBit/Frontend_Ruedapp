@@ -37,5 +37,8 @@ export class BicicletasService {
     return this.http.delete(`${this.apiUrl}/bicicleta/delete/${id}`, { headers })
   };
 
-  
+  postBici(bodyBici: any) {
+    const headers = this.header()
+    return this.http.post(`${this.apiUrl}/bicicleta/create`, bodyBici, {headers})
+  }
 }

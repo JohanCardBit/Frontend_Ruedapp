@@ -1,0 +1,96 @@
+<div class="panel-header mb-4 d-flex justify-content-between align-items-center">
+    <h1 class="titulo-seccion">
+        Crear estaciones o patinetas
+    </h1>
+</div>
+
+<div class="SECCIONES CREAR row mt-4">
+
+    <!-- Crear Estación -->
+    <div class="col-md-6">
+        <div class="panel-section">
+            <h2 class="section-title">
+                <svg width="37" height="37" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="40" cy="40" r="36" fill="#E6F0FF" stroke="#1E2A78" stroke-width="3" />
+                    <path d="M40 25C33 25 28 30 28 36C28 46 40 55 40 55C40 55 52 46 52 36C52 30 47 25 40 25Z"
+                        fill="white" stroke="#1E2A78" stroke-width="3" />
+                    <circle cx="40" cy="36" r="4" fill="#1E2A78" />
+                    <line x1="40" y1="12" x2="40" y2="20" stroke="#1E2A78" stroke-width="3" stroke-linecap="round" />
+                    <line x1="36" y1="16" x2="44" y2="16" stroke="#1E2A78" stroke-width="3" stroke-linecap="round" />
+                </svg>
+                Crear estación
+            </h2>
+
+            <form [formGroup]="formEstaciones" class="formulario">
+                <div class="mb-3">
+                    <label class="form-label">Nombre</label>
+                    <input formControlName="nombre" type="text" class="form-control custom-input" placeholder="Nombre de la estación">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Dirección</label>
+                    <input formControlName="direccion" type="text" class="form-control custom-input" placeholder="Dirección">
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label class="form-label">Latitud</label>
+                        <input formControlName="latitud" type="number" class="form-control custom-input" placeholder="Ej: 4.60971">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Longitud</label>
+                        <input formControlName="longitud" type="number" class="form-control custom-input" placeholder="Ej: -74.08175">
+                    </div>
+                </div>
+                <div class="mb-3 mt-2">
+                    <label class="form-label">Capacidad</label>
+                    <input formControlName="capacidad" type="number" class="form-control custom-input" placeholder="Capacidad máxima">
+                </div>
+                <button (click)="crearEstacion()" type="submit" class="btn btn-crear w-100">Crear</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Crear Patineta -->
+    <div class="col-md-6">
+        <div class="panel-section">
+            <h2 class="section-title">
+                <svg width="37" height="37" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="40" cy="40" r="36" fill="#E6F0FF" stroke="#1E2A78" stroke-width="3" />
+                    <rect x="22" y="32" width="36" height="6" rx="3" fill="white" stroke="#1E2A78" stroke-width="3" />
+                    <circle cx="28" cy="46" r="6" fill="white" stroke="#1E2A78" stroke-width="3" />
+                    <circle cx="52" cy="46" r="6" fill="white" stroke="#1E2A78" stroke-width="3" />
+                    <line x1="40" y1="18" x2="40" y2="28" stroke="#1E2A78" stroke-width="3" stroke-linecap="round" />
+                    <line x1="35" y1="23" x2="45" y2="23" stroke="#1E2A78" stroke-width="3" stroke-linecap="round" />
+                </svg>
+                Crear patineta
+            </h2>
+
+            <form [formGroup]="formBicis" class="formulario ptns">
+                <div class="mb-3">
+                    <label class="form-label">Serial</label>
+                    <input formControlName="serial" type="text" class="form-control custom-input" placeholder="Ej: PAT-001">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Estado</label>
+                    <select formControlName="estado" class="form-control custom-input">
+                        <option value="disponible">Disponible</option>
+                        <option value="en uso">En uso</option>
+                        <option value="en mantenimiento">En mantenimiento</option>
+                    </select>
+                </div>
+                <div class="mb-5">
+                    <label class="form-label">Asignar estación</label>
+                    <select formControlName="estacion" class="form-control custom-input">
+                        <option selected disabled>Seleccione estación</option>
+                        <option value="Estacion central">Estacion central</option>
+                        <option value="Estacion norte">Estacion norte</option>
+                        <option value="Estacion sur">Estacion sur</option>
+                        <option value="Estacion occidente">Estacion occidente</option>
+                        <option value="Estacion soacha">Estacion soacha</option>
+                    </select>
+                </div>
+                <button (click)="crearBici()" type="submit" class="btn mt-5 btn-crear w-100">Crear</button>
+            </form>
+        </div>
+    </div>
+
+</div>
