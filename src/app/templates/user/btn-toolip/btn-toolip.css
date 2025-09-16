@@ -1,0 +1,106 @@
+/* Container */
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Botón */
+.tooltip-btn {
+  position: relative;
+  padding: 12px 20px;
+  background: linear-gradient(to right, #542DC3, #1E2A78);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 1rem;
+  cursor: pointer;
+  border: none;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(84, 45, 195, 0.4);
+}
+.tooltip-btn:hover {
+  background: linear-gradient(to right, #3b1e91, #14194d);
+}
+
+.tooltip-btn-glow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(142, 68, 173, 0.25), rgba(52, 152, 219, 0.25));
+  filter: blur(20px);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.tooltip-btn:hover .tooltip-btn-glow {
+  opacity: 1;
+}
+.tooltip-btn-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.tooltip-btn .icon {
+  width: 18px;
+  height: 18px;
+  stroke: white;
+}
+
+/* Tooltip box */
+.tooltip-box {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translate(-50%, 10px);
+  opacity: 0;
+  visibility: hidden;
+  margin-bottom: 10px;
+  width: 250px;
+  transition: all 0.3s ease;
+  z-index: 50;
+}
+.tooltip-container:hover .tooltip-box {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
+/* Tooltip content */
+.tooltip-content {
+  position: relative;
+  padding: 15px;
+  border-radius: 0.8rem;
+  background: rgba(17, 17, 17, 0.95);
+  border: 1px solid rgba(84, 45, 195, 0.4);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  color: #e5e5e5;
+  font-size: 0.85rem;
+}
+.tooltip-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.tooltip-list li {
+  margin-bottom: 8px;
+}
+.tooltip-list li:last-child {
+  margin-bottom: 0;
+}
+.tooltip-list strong {
+  color: #8b5cf6;
+}
+
+/* Flechita */
+.tooltip-arrow {
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  transform: translateX(-50%) rotate(45deg);
+  width: 12px;
+  height: 12px;
+  background: rgba(17, 17, 17, 0.95);
+  border-right: 1px solid rgba(84, 45, 195, 0.4);
+  border-bottom: 1px solid rgba(84, 45, 195, 0.4);
+}

@@ -1,7 +1,9 @@
 export enum ApiUrl {
-    url = "http://3.142.222.248:3002/api"
+    url = "http://localhost:3002/api"
+
 
 }
 
+// url = "http://18.188.212.207/bicis/api"
 
-    // url = "http://localhost:3002/api"
+// url = "http://localhost:3002/api"

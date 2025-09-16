@@ -39,6 +39,11 @@ export class BicicletasService {
 
   postBici(bodyBici: any) {
     const headers = this.header()
-    return this.http.post(`${this.apiUrl}/bicicleta/create`, bodyBici, {headers})
+    return this.http.post(`${this.apiUrl}/bicicleta/create`, bodyBici, { headers })
+  };
+
+  getBicisPorEstacion(estacionID: string) {
+    const headers = this.header()
+    return this.http.get(`${this.apiUrl}/bicicleta/estacion/${estacionID}`, {headers})
   }
 }

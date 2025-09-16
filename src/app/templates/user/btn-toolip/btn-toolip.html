@@ -1,0 +1,26 @@
+<div class="BOTONTOOLIP d-flex gap-2 flex-wrap justify-content-lg-start  justify-content-md-center justify-content-sm-center justify-content-center">
+    <div class="tooltip-container">
+        <button class="tooltip-btn" (click)="seleccionado()">
+            <div class="tooltip-btn-glow"></div>
+            <span class="tooltip-btn-content">
+                <svg viewBox="0 0 24 24" class="icon">
+                    <path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor"
+                        fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <span>{{data.nombre}}</span>
+            </span>
+        </button>
+
+        <!-- Tooltip -->
+        <div class="tooltip-box">
+            <div class="tooltip-content">
+                <ul class="tooltip-list">
+                    <li><strong>Dirección:</strong> {{data.direccion}}</li>
+                    <li><strong>Patinetas Estacionadas:</strong> {{data.bicicletasDisponibles}}</li>
+                    <li><strong>Capacidad:</strong> {{data.capacidad}}</li>
+                </ul>
+            </div>
+            <div class="tooltip-arrow"></div>
+        </div>
+    </div>
+</div>
