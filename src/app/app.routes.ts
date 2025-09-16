@@ -8,6 +8,7 @@ import { Estaciones } from './components/dashboard/estaciones/estaciones';
 import { Misusuarios } from './components/dashboard/misusuarios/misusuarios';
 import { Bicicletas } from './components/dashboard/bicicletas/bicicletas';
 import { Crear } from './components/dashboard/crear/crear';
+import { Estacionar } from './components/panel/estacionar/estacionar';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -26,7 +27,8 @@ export const routes: Routes = [
 
     {
         path: 'panel', component: Panel, children: [
-            { path: 'inicio', component: Inicio, title: 'Ruedapp | Panel de usuario' },
+            { path: 'alquilar', component: Inicio, title: 'Ruedapp | Panel de alquiler' },
+            { path: 'estacionar', component: Estacionar, title: 'Ruedapp | Panel de estacionamineto'}
 
         ]
     }

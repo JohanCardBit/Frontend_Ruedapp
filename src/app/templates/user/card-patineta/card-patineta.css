@@ -667,3 +667,9 @@
     border-color: rgba(92, 103, 255, 0.8);
     box-shadow: 0 0 10px rgba(92, 103, 255, 0.5);
 }
+
+
+.fs{
+    font-size: 7px;
+    color: rgba(162, 144, 193, 0.649) !important;
+}

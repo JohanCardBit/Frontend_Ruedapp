@@ -20,8 +20,10 @@
 <div
     class="CARD ALQUILAR d-flex flex-wrap justify-content-evenly gap-3">
     @for (item of dataPatinetas; track $index) {
-        <app-card-patineta
-        [data]="item">
-        </app-card-patineta>
+        @if (item.estado === "disponible") {
+            <app-card-patineta
+                [data]="item">
+            </app-card-patineta>
+        }
     }
 </div>

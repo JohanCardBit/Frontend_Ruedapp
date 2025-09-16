@@ -1,4 +1,4 @@
-<div class="CARD PATINETAS container noselect">
+<div (click)="rentarPatineta()" class="CARD PATINETAS container noselect">
     <div class="canvas">
         <div class="tracker tr-1"></div>
         <div class="tracker tr-2"></div>
@@ -16,15 +16,16 @@
                     <span></span><span></span><span></span><span></span>
                 </div>
                 <p id="prompt">{{data.serial}}</p>
-                <div class="title">RENT<br />SCOOTER</div>
+                <div  class="title">RENT<br />SCOOTER</div>
                 <div class="glowing-elements">
                     <div class="glow-1"></div>
                     <div class="glow-2"></div>
                     <div class="glow-3"></div>
                 </div>
                 <div class="subtitle">
-                    <span>PATINETA</span>
-                    <span class="highlight">72V ELECTRIC</span>
+                    <span>{{data.estado}}<br></span>
+                    <span class="highlight">72V ELECTRIC <br></span>
+                    <span class=" fs">{{data._id}}</span>
                 </div>
                 <div class="card-particles">
                     <span></span><span></span><span></span> <span></span><span></span><span></span>
