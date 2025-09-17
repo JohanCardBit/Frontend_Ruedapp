@@ -1,0 +1,39 @@
+/**         HEADER       */
+.panel-header {
+    padding: 1rem 1.5rem;
+    background: rgba(48, 30, 120, 0.549);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    color: #fff;
+}
+
+.titulo-seccion {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.search-box {
+    min-width: 250px;
+}
+
+.search {
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    padding: 0.5rem 1rem;
+}
+
+.search::placeholder {
+    color: #ccc;
+}
+
+/**       FIN HEADER     */
+
+
+
+
+
+
+
