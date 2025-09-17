@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 
 
 @Component({
@@ -9,5 +9,19 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styleUrl: './panel.css'
 })
 export class Panel {
+  constructor(private router: Router) { };
 
+  cerrarSesion() {
+    const confimarcion = confirm("Estas seguro de cerrar sesion?");
+    if (!confimarcion) {
+      return;
+    }
+
+    sessionStorage.clear()
+
+    this.router.navigate(["/login"]);
+
+
+
+  }
 }

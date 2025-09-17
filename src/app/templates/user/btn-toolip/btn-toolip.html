@@ -1,6 +1,6 @@
-<div class="BOTONTOOLIP d-flex gap-2 flex-wrap justify-content-lg-start  justify-content-md-center justify-content-sm-center justify-content-center">
+<div class="BOTONTOOLIP  d-flex gap-2 flex-wrap justify-content-lg-start  justify-content-md-center justify-content-sm-center justify-content-center">
     <div class="tooltip-container">
-        <button class="tooltip-btn" (click)="seleccionado()">
+        <button class="tooltip-btn"  [class.activos]="isActive" (click)="seleccionado()">
             <div class="tooltip-btn-glow"></div>
             <span class="tooltip-btn-content">
                 <svg viewBox="0 0 24 24" class="icon">

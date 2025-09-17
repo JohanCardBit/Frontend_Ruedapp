@@ -7,3 +7,13 @@
         <input type="text" class="search form-control" placeholder="Buscar estacion...">
     </div>
 </div>
+
+<div class=" d-flex flex-wrap">
+    @for (item of dataEstacionesu; track $index) {
+
+        <app-card-estacion-u
+        [data]="item">
+            
+        </app-card-estacion-u>
+    }
+</div>

@@ -1,4 +1,4 @@
-<div class="HEADER panel-header mb-4 d-flex justify-content-between align-items-center">
+<div class="HEADER panel-header mb-4 d-flex flex-wrap justify-content-between align-items-center">
     <h1 class="titulo-seccion">
         Alquilar Patineta
     </h1>
@@ -8,10 +8,11 @@
     </div>
 </div>
 
-<div class="BTON FILTRAR TOOOLIP mb-4 d-flex gap-2 flex-wrap">
+<div class="BTON FILTRAR TOOOLIP mb-4 d-flex gap-3 flex-wrap">
     @for (item of dataEstacions; track $index) {
         <app-btn-toolip 
             [data]="item"
+            [isActive]="item._id === selectedEstacionId"
             (seleccionar)="filtrarPatinetas($event)">
         </app-btn-toolip>
     }

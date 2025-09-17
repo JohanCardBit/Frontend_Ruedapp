@@ -47,8 +47,10 @@ export class Inicio {
   ngOnInit() {
     this.renderEstacionesT()
   }
+selectedEstacionId!: string ;
 
-  filtrarPatinetas(estacionID: string) {
+filtrarPatinetas(estacionID: string) {
+  this.selectedEstacionId = estacionID;
     this.patinetasServics.getBicisPorEstacion(estacionID).subscribe({
       next: (dataApi: any) => {
         this.dataPatinetas = dataApi;

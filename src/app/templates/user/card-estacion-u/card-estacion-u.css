@@ -1,0 +1,148 @@
+
+/*!     CARD      */
+.twitter-card {
+    width: 320px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    margin: 20px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    animation: fadeIn 1s ease forwards;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.card-header {
+    background: linear-gradient(135deg, rgba(26, 31, 70, 0.9), rgba(71, 36, 118, 0.9));
+    color: white;
+    padding: 24px 20px;
+    position: relative;
+    animation: slideDown 1.2s ease;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.twitter-icon {
+    width: 28px;
+    height: 28px;
+    fill: white;
+
+}
+
+@keyframes spinIcon {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.status {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(6px);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); background: rgba(255,255,255,0.2); }
+    50% { transform: scale(1.05); background: rgba(255,255,255,0.35); }
+}
+
+.brand-name {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+    animation: textFade 2s ease;
+}
+
+@keyframes textFade {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.handle {
+    font-size: 16px;
+    opacity: 0.9;
+    font-weight: 400;
+    animation: textFade 2s ease 0.3s backwards;
+}
+
+.card-stats {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    background: rgba(218, 15, 15, 0.05);
+    backdrop-filter: blur(10px);
+    animation: fadeIn 1.5s ease 0.5s backwards;
+}
+
+.stat {
+    text-align: center;
+    flex: 1;
+    padding: 0 8px;
+    transition: transform 0.3s ease;
+}
+
+.stat:hover {
+    transform: scale(1.15) rotate(-2deg);
+}
+
+.stat-number {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 6px;
+    line-height: 1;
+    animation: countUp 2s ease forwards;
+}
+
+@keyframes countUp {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.stat-label {
+    font-size: 13px;
+    color: #d1d5db;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+/* Hover con tilt y glow */
+.twitter-card:hover {
+    transform: rotate3d(1, 1, 0, 6deg) scale(1.05);
+    box-shadow: 0 12px 40px rgba(154, 78, 255, 0.5),
+                0 0 20px rgba(95, 114, 255, 0.7);
+}
+
+/*!   FIN CARD      */
+
+
+

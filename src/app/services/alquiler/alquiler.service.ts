@@ -10,7 +10,7 @@ export class AlquilerService {
   constructor(private http: HttpClient) { }
 
   private header() {
-    const token = sessionStorage.getItem('token'); // 👈 aquí debe estar guardado tu JWT
+    const token = sessionStorage.getItem('token');
     const headers = new HttpHeaders({
       'authorization': `Bearer ${token}`
     });
@@ -20,4 +20,15 @@ export class AlquilerService {
   postAlquilar(estacionSalida: string, serial: string) {
     return this.http.post(`${this.apiUrl}/alquilar/create`, { estacionSalida, serial }, this.header());
   }
+
+
+  postDevolver(estacionLlegada: string) {
+    return this.http.post(`${this.apiUrl}/alquiler/devolver`, { estacionLlegada }, this.header());
+  };
+
+  getAlquilerActivoUser() {
+    return this.http.get(`${this.apiUrl}/alquiler/activo/user`, this.header());
+  }
+
+
 }
