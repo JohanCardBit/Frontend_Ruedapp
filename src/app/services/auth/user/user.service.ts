@@ -34,4 +34,10 @@ export class UserService {
     const headers = this.header()
     return this.http.get(`${this.apiUrl}/user/me`, { headers })
   }
+
+  updateUser(id: string, body: any) {
+    const headers = this.header();
+    return this.http.put(`${this.apiUrl}/user/update/${id}`, body, { headers });
+  }
+
 }

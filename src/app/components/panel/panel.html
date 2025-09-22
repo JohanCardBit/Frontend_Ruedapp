@@ -1,5 +1,5 @@
-<section class="body col-12">
-    <div  class="sidebar col-1">
+<section class="SIDEBAR body col-12">
+    <div class="sidebar col-1">
         <img class="logo" src="/logoruedapp.png" alt="" />
         <div routerLink="perfil" class="butonsillo">
 
@@ -44,17 +44,7 @@
             <span class="tooltip">Estacionar</span>
         </div>
 
-        <div class="butonsillo patienetas">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="none"
-                stroke="wheat" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="6" cy="18" r="2" />
-                <circle cx="16" cy="18" r="2" />
-                <line x1="6" y1="18" x2="16" y2="18" />
-                <line x1="16" y1="18" x2="16" y2="8" />
-                <line x1="14" y1="6" x2="18" y2="6" />
-            </svg>
-            <span class="tooltip">Patinetas</span>
-        </div>
+
 
         <div (click)="cerrarSesion()" class="butonsillo salir">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="none"
@@ -68,7 +58,7 @@
         <!-- <div class="butonsillo"></div> -->
     </div>
 
-    <div class="contenedor col-11">
+    <div class="CONTENEDOR contenedor col-11">
         <router-outlet> </router-outlet>
     </div>
 </section>

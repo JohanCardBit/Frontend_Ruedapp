@@ -15,7 +15,7 @@ export class CardPerfilU {
   userMe() {
     this.userServices.getMe().subscribe({
       next: (res: any) => {
-        this.dataUser = res.dataID; // 👈 ojo, porque tu backend devuelve { msj, dataID }
+        this.dataUser = res.dataID; 
         console.log(this.dataUser);
       },
       error: (error) => console.error(error),

@@ -10,7 +10,10 @@
 
 <div class="BTON FILTRAR TOOOLIP mb-4 d-flex gap-3 flex-wrap">
     @for (item of dataEstacions; track $index) {
-    <app-btn-toolip [data]="item" [isActive]="item._id === selectedEstacionId" (seleccionar)="filtrarPatinetas($event)">
+    <app-btn-toolip 
+    [data]="item" 
+    [isActive]="item._id === selectedEstacionId" 
+    (seleccionar)="filtrarPatinetas($event)">
     </app-btn-toolip>
     }
 </div>
@@ -18,7 +21,8 @@
 <div class="CARD ALQUILAR d-flex flex-wrap justify-content-evenly gap-3">
     @for (item of dataPatinetas; track $index) {
     @if (item.estado === "disponible") {
-    <app-card-patineta [data]="item">
+    <app-card-patineta 
+    [data]="item">
     </app-card-patineta>
     }
     }

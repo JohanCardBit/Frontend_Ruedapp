@@ -1,0 +1,50 @@
+<form [formGroup]="formPerfil" class="config-form" novalidate>
+
+    <div class="form-grid">
+
+        <div class="photo-box">
+            <div class="photo-preview">
+                <img id="preview" [src]="formPerfil.value.foto || 'https://amaranhotels.com/images/my/testimonals-3.png'" alt="Preview foto usuario">
+            </div>
+
+
+        </div>
+
+
+        <div class="fields">
+
+            <div class="row">
+                <label class="field">
+                    <span class="label-text">Nombre</span>
+                    <input formControlName="nombre" type="text" name="nombre" placeholder="Mauricio">
+                </label>
+
+                <label class="field">
+                    <span class="label-text">Apellido</span>
+                    <input formControlName="apellido" type="text" name="apellido" placeholder="Cárdenas">
+                </label>
+            </div>
+
+            <label class="field">
+                <span class="label-text">URL de la Foto</span>
+                <input formControlName="foto" type="text" name="foto" placeholder="https://ejemplo.com/foto.jpg"
+                    oninput="document.getElementById('preview').src=this.value ">
+            </label>
+
+            <label class="field">
+                <span class="label-text">Correo</span>
+                <input formControlName="correo" type="email" name="correo" placeholder="usuario@ejemplo.com">
+            </label>
+
+            <label class="field">
+                <span class="label-text">Contraseña</span>
+                <input formControlName="password" type="password" name="password" placeholder="Nueva contraseña">
+                <small class="hint">Dejar vacío si no deseas cambiarla</small>
+            </label>
+
+            <div class="actions d-flex  justify-content-end">
+                <button  (click)="updatePerfil()" type="submit">Guardar cambios</button>
+            </div>
+        </div>
+    </div>
+</form>

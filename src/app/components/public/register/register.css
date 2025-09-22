@@ -30,16 +30,24 @@
 .body {
     margin: 0;
     width: 100vw;
-    height: 95vh;
+    min-height: 100vh;
+    /* que crezca si el contenido es mayor */
     display: flex;
+    flex-direction: column;
+    /* contenido apilado en móvil */
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    /* no centrar verticalmente */
     background: rgba(10, 5, 22, 0.274) url('/fondo3.jpeg') center/cover no-repeat;
     background-blend-mode: overlay;
     box-sizing: border-box;
-    overflow: hidden;
-
+    overflow-y: auto;
+    /* permite scroll */
+    padding: 20px 0;
+    /* espacio superior/inferior */
 }
+
+
 
 
 .card-register {
@@ -60,7 +68,7 @@
     flex-direction: row;
     gap: 2rem;
     align-items: center;
-
+    /* margin: 15px; */
 }
 
 
@@ -190,8 +198,65 @@
 }
 
 .footer-login {
+    text-align: center;
     width: 100vw;
     height: 5vh;
     background: linear-gradient(333deg, rgb(10, 5, 22) 0%, rgb(1, 0, 2) 100%);
     color: rgba(128, 128, 128, 0.266);
+}
+
+@media (max-width: 920px) {
+    .card-register {
+        flex-direction: column;
+        /* apilar logo y formulario */
+        gap: 1rem;
+        max-width: 95%;
+        padding: 1.5rem;
+    }
+
+    .logo-section,
+    .form-section {
+        flex: 0 0 100%;
+        /* ocupar todo el ancho */
+        text-align: center;
+    }
+
+    .logo-section img {
+        width: 70%;
+        max-width: 220px;
+        margin: 0 auto;
+    }
+
+    .subtitle-logo {
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+    }
+
+    .form-section h3 {
+        font-size: 1.4rem;
+    }
+
+    .input-group input,
+    .btn-register {
+        width: 190px;
+        font-size: 1rem;
+    }
+
+    .extras-register {
+        font-size: 0.85rem;
+    }
+
+    .home {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        top: 12px;
+        left: 12px;
+    }
+
+    .footer-login {
+        text-align: center;
+        width: 100vw;
+        height: 15vh;
+    }
 }

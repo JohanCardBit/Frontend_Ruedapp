@@ -1,7 +1,6 @@
-
 /*!     CARD      */
 .twitter-card {
-    width: 320px;
+    width: 320px; 
     border-radius: 20px;
     overflow: hidden;
     background: rgba(255, 255, 255, 0.1);
@@ -12,18 +11,21 @@
     margin: 20px;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     animation: fadeIn 1s ease forwards;
+    box-sizing: border-box;
 }
 
 
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px) scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
+    from { opacity: 0; transform: translateY(30px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 .card-header {
@@ -44,18 +46,6 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 16px;
-}
-
-.twitter-icon {
-    width: 28px;
-    height: 28px;
-    fill: white;
-
-}
-
-@keyframes spinIcon {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
 }
 
 .status {
@@ -82,11 +72,6 @@
     animation: textFade 2s ease;
 }
 
-@keyframes textFade {
-    from { opacity: 0; transform: translateX(-20px); }
-    to { opacity: 1; transform: translateX(0); }
-}
-
 .handle {
     font-size: 16px;
     opacity: 0.9;
@@ -101,13 +86,16 @@
     background: rgba(218, 15, 15, 0.05);
     backdrop-filter: blur(10px);
     animation: fadeIn 1.5s ease 0.5s backwards;
+    flex-wrap: wrap; /* evita que los stats se rompan */
+    gap: 10px;
 }
 
 .stat {
     text-align: center;
     flex: 1;
-    padding: 0 8px;
+
     transition: transform 0.3s ease;
+    min-width: 80px;
 }
 
 .stat:hover {
@@ -123,11 +111,6 @@
     animation: countUp 2s ease forwards;
 }
 
-@keyframes countUp {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
 .stat-label {
     font-size: 13px;
     color: #d1d5db;
@@ -135,14 +118,44 @@
     text-transform: capitalize;
 }
 
-/* Hover con tilt y glow */
 .twitter-card:hover {
     transform: rotate3d(1, 1, 0, 6deg) scale(1.05);
     box-shadow: 0 12px 40px rgba(154, 78, 255, 0.5),
                 0 0 20px rgba(95, 114, 255, 0.7);
 }
 
-/*!   FIN CARD      */
 
+@media (max-width: 480px) {
+    .twitter-card {
+        width: 250px;
+margin: 10px auto;
+    }
 
+    .card-header {
+        padding: 15px;
+    }
+
+    .brand-name {
+        font-size: 20px;
+    }
+
+    .handle {
+        font-size: 14px;
+    }
+
+    .card-stats {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .stat {
+        flex: 1 1 100%;
+        min-width: auto;
+    }
+
+    .status {
+        font-size: 12px;
+        padding: 4px 10px;
+    }
+}
 
