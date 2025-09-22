@@ -9,6 +9,7 @@ import { Misusuarios } from './components/dashboard/misusuarios/misusuarios';
 import { Bicicletas } from './components/dashboard/bicicletas/bicicletas';
 import { Crear } from './components/dashboard/crear/crear';
 import { Estacionar } from './components/panel/estacionar/estacionar';
+import { Perfil } from './components/panel/perfil/perfil';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -28,7 +29,8 @@ export const routes: Routes = [
     {
         path: 'panel', component: Panel, children: [
             { path: 'alquilar', component: Inicio, title: 'Ruedapp | Panel de alquiler' },
-            { path: 'estacionar', component: Estacionar, title: 'Ruedapp | Panel de estacionamineto'}
+            { path: 'estacionar', component: Estacionar, title: 'Ruedapp | Panel de estacionamineto' },
+            { path: 'perfil', component: Perfil, title: 'Ruedapp | Perfil' }
 
         ]
     }

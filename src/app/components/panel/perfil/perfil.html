@@ -1,0 +1,31 @@
+<div class="tabs">
+    <input type="radio" id="tab1" name="tab" checked>
+    <input type="radio" id="tab2" name="tab">
+    <input type="radio" id="tab3" name="tab">
+    <input type="radio" id="tab4" name="tab">
+
+    <div class="tab-labels d-flex flex-wrap">
+        <label for="tab1">Datos Personales</label>
+        <label for="tab2">Alquiler Activo</label>
+        <label for="tab3">Historial</label>
+        <label for="tab4">Configuración</label>
+        <span class="glider"></span>
+    </div>
+
+    <div class="DATOS-PERSONALES tab-content" id="content1">
+        <app-card-perfil-u></app-card-perfil-u>
+    </div>
+
+    <div class="tab-content" id="content2">
+        <app-card-alquiler-activo></app-card-alquiler-activo>
+    </div>
+
+    <div class="tab-content" id="content3">
+        <app-card-historial-alquileres></app-card-historial-alquileres>
+    </div>
+
+    <div class="tab-content" id="content4">
+        <h2>Configuración</h2>
+        <p>Ejemplo: Preferencias, seguridad, idioma...</p>
+    </div>
+</div>

@@ -1,0 +1,163 @@
+
+.cont {
+    margin: 40px auto;
+}
+
+/*?     CARD-PERFIL        */
+
+/* !NOMBRE Y FOTO */
+.perfil-foto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+}
+
+.perfil-foto img {
+    /* margin-top: 3rem; */
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    border-radius: 50%;
+    border: none;
+    object-fit: cover;
+    box-shadow: 0 8px 25px rgba(128, 30, 255, 0.3);
+    transition: all 0.4s ease;
+}
+
+.perfil-foto img:hover {
+    transform: scale(1.08) rotate(2deg);
+    box-shadow: 0 12px 30px rgba(206, 30, 255, 0.4);
+    border-color: #00c6ff;
+}
+
+.perfil-foto img {
+    animation: fadeInProfile 0.8s ease-out;
+}
+
+@keyframes fadeInProfile {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.perfil-nombre {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 0;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    letter-spacing: 1px;
+    animation: slideUp 0.6s ease-out;
+
+}
+
+.perfil-nombre::after {
+    content: "";
+    display: block;
+    margin: 1rem auto 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #691eff, #9d00ff);
+    border-radius: 3px;
+    animation: growLine 0.8s ease-out;
+}
+
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes growLine {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+
+    to {
+        width: 60px;
+        opacity: 1;
+    }
+}
+
+/* !NOMBRE Y FOTO */
+
+
+
+/** INFORMACION */
+.info-card {
+    color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 10px auto;
+    box-shadow: 0 8px 25px rgba(128, 30, 255, 0.206);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(128, 30, 255, 0.4);
+}
+
+.info-card ul {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.info-card ul li {
+    font-size: 16px;
+    margin: 6px 0;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.023);
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    gap: 10px;
+
+    flex-wrap: wrap;       
+    word-break: break-word; 
+}
+
+.info-card ul li strong {
+    color: #dfbdfff5;
+    min-width: 80px;
+    flex-shrink: 0;
+}
+
+
+
+@media (max-width: 600px) {
+    .info-card {
+        padding: 15px;
+    }
+
+    .info-card ul li {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+/** FIN INFORMACION */
+
+/*?   FIN CARD-PERFIL        */

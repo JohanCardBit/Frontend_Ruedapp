@@ -1,6 +1,17 @@
 <section class="body col-12">
-    <div class="sidebar col-1">
+    <div  class="sidebar col-1">
         <img class="logo" src="/logoruedapp.png" alt="" />
+        <div routerLink="perfil" class="butonsillo">
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="10" stroke="#F5DFB3" stroke-width="1.8" />
+                <circle cx="12" cy="9" r="3" fill="none" stroke="#F5DFB3" stroke-width="1.8" />
+                <path d="M6 18c1.5-3 10.5-3 12 0" fill="none" stroke="#F5DFB3" stroke-width="1.8" />
+                <circle cx="18" cy="18" r="3.2" fill="#22c55e" stroke="white" stroke-width="1" />
+            </svg>
+
+            <span class="tooltip">Perfil</span>
+        </div>
 
         <div routerLink="alquilar" class="butonsillo homee">
             <svg xmlns="http://www.w3.org/2000/svg" width="140" height="80" viewBox="0 0 140 80"
@@ -21,7 +32,9 @@
         <div routerLink="estacionar" class="butonsillo perfil">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width="35" height="80">
                 <circle cx="75" cy="75" r="70" fill="none" stroke="wheat" stroke-width="6" />
-                <text x="25" y="85" font-size="60" font-weight="bold" fill="wheat" font-family="Arial">P</text>
+                <text x="25" y="85" font-size="60" font-weight="bold" fill="wheat" font-family="Arial">
+                    P
+                </text>
                 <rect x="65" y="95" width="50" height="6" rx="3" fill="wheat" />
                 <circle cx="70" cy="105" r="6" fill="wheat" />
                 <circle cx="110" cy="105" r="6" fill="wheat" />
@@ -52,14 +65,11 @@
             </svg>
             <span class="tooltip">Salir</span>
         </div>
-        <div class="butonsillo"></div>
-        <div class="butonsillo"></div>
+        <!-- <div class="butonsillo"></div> -->
     </div>
 
     <div class="contenedor col-11">
-        <router-outlet>
-
-        </router-outlet>
+        <router-outlet> </router-outlet>
     </div>
 </section>
 
