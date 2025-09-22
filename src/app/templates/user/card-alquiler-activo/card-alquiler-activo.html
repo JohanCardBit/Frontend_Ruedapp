@@ -1,3 +1,4 @@
+@if (alquilerActivo) {
 <div class="cont">
     <section class="d-flex flex-wrap col-12">
         <div class=" col-sm-12 col-md-5 col-lg-4">
@@ -18,7 +19,7 @@
                             <div class="cyber-lines">
                                 <span></span><span></span><span></span><span></span>
                             </div>
-                            <p id="prompt">asds</p>
+                            <p id="prompt">{{ alquilerActivo?.bicicleta?.serial }}</p>
                             <div class="title"><br /></div>
                             <div class="glowing-elements">
                                 <div class="glow-1"></div>
@@ -26,12 +27,12 @@
                                 <div class="glow-3"></div>
                             </div>
                             <div class="subtitle">
-                                <span>asd<br></span>
+                                <span>{{ alquilerActivo?.bicicleta?.estado }}<br></span>
                                 <span class="highlight">72V ELECTRIC <br></span>
-                                <span class=" fs">asd</span>
+                                <span class="fs">{{ alquilerActivo?.bicicleta?._id }}</span>
                             </div>
                             <div class="card-particles">
-                                <span></span><span></span><span></span> <span></span><span></span><span></span>
+                                <span></span><span></span><span></span><span></span><span></span><span></span>
                             </div>
                             <div class="corner-elements">
                                 <span></span><span></span><span></span><span></span>
@@ -46,13 +47,20 @@
         <div class="col-sm-12 col-md-7 col-lg-8 d-flex align-items-center">
             <div class="info-card">
                 <ul>
-                    <li><strong>ID Alquiler:</strong> 68c9ce7fe40291257e1d2702</li>
-                    <li><strong>Estacion de Salida:</strong> Estacion Sur</li>
-                    <li><strong>Fecha de inicio:</strong> 16/09/2025</li>
-                    <li><strong>Tiempo de uso:</strong> 78h 43m 4s</li>
-                    <li><strong>Activo:</strong> True</li>
+                    <li><strong>ID Alquiler:</strong> {{ alquilerActivo?._id }}</li>
+                    <li><strong>Estacion de Salida:</strong> {{ alquilerActivo?.estacionSalida?.nombre }}</li>
+                    <li><strong>Fecha de inicio:</strong> {{ alquilerActivo?.fechaInicio | date:'dd/MM/yyyy HH:mm:ss' }}</li>
+                    <li><strong>Tiempo de uso:</strong> {{ tiempoUso }}</li>
+                    <li><strong>Activo:</strong> {{ alquilerActivo?.activo }}</li>
+                    <li><strong></strong> <button routerLink="/panel/estacionar" class="my-2">Estacionar</button></li>
                 </ul>
             </div>
         </div>
     </section>
 </div>
+} @else {
+<div class="cont text-center p-4">
+    <p>No tienes un alquiler activo en este momento </p>
+    <button routerLink="/panel/alquilar">Alquilar una ahora!</button>
+</div>
+}

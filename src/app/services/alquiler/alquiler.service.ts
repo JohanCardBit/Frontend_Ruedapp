@@ -30,5 +30,8 @@ export class AlquilerService {
     return this.http.get(`${this.apiUrl}/alquiler/activo/user`, this.header());
   }
 
+  getHistorialAlquileresUser() {
+    return this.http.get(`${this.apiUrl}/alquiler/historial/user`, this.header());
+  }
 
 }

@@ -28,4 +28,10 @@ export class UserService {
     const headers = this.header()
     return this.http.get(`${this.apiUrl}/users`, { headers })
   }
+
+
+  getMe() {
+    const headers = this.header()
+    return this.http.get(`${this.apiUrl}/user/me`, { headers })
+  }
 }

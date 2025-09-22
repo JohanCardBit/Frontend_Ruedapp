@@ -59,7 +59,7 @@ export class Crear {
         },
 
         error: (error: any) => {
-          flashy("Error, Intentalo nuevamente", {
+          flashy(error.error.msj || "Error, Intentalo nuevamente", {
             type: 'error',
             position: 'bottom-right',
             duration: 4000,

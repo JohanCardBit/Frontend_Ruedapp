@@ -2,15 +2,15 @@
     <div class="d-flex flex-wrap col-12 ">
         <div class="PEFIL perfil-foto py-5 col-sm-12 col-md-5 col-lg-4">
             <img src="https://amaranhotels.com/images/my/testimonals-3.png" alt="Foto de perfil" />
-            <h2 class="perfil-nombre py-3">Mauricio Cardenas</h2>
+            <h2 class="perfil-nombre py-3">{{dataUser?.nombre}} {{dataUser?.apellido}}</h2>
         </div>
         <div class="col-sm-12 col-md-7 col-lg-8 d-flex align-items-center">
             <div class="info-card">
                 <ul>
-                    <li><strong>ID:</strong> 68c9ce7fe40291257e1d2702</li>
-                    <li><strong>Correo:</strong> mauro@gmail.com</li>
-                    <li><strong>Creado en:</strong> 16/09/2025</li>
-                    <li><strong>Role:</strong> user</li>
+                    <li><strong>ID:</strong> {{dataUser?._id}}</li>
+                    <li><strong>Correo:</strong> {{dataUser?.correo}}</li>
+                    <li><strong>Creado en:</strong> {{ dataUser?.createdAt | date:'dd/MM/yyyy hh:mm:ss a' }}</li>
+                    <li><strong>Role:</strong> {{dataUser?.role}}</li>
                 </ul>
             </div>
         </div>

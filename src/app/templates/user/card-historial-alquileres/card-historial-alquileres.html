@@ -1,31 +1,25 @@
-<div class="historial-container  flex-wrap gap-5">
 
+<div class="historial-container flex-wrap gap-5">
+    @if (alquileres.length === 0) {
+    <div class="text-gray-500">No tienes alquileres en el historial.</div>
+    }
+
+    @for (item of alquileres; track $index) {
     <div class="alquiler-card">
         <div class="alquiler-header">
-            <span class="serial">🚲 PTNT-08</span>
-            <span class="estado finalizado">Finalizado</span>
+            <span class="serial">🚲 {{ item.bicicleta?.serial }}</span>
+            <span class="estado" [ngClass]="item.activo ? 'activo' : 'finalizado'">
+                {{ item.activo ? 'Activo' : 'Finalizado' }}
+            </span>
         </div>
         <ul>
-            <li><strong>Estación salida:</strong> Estacion norte</li>
-            <li><strong>Estación llegada:</strong> Estacion norte</li>
-            <li><strong>Fecha inicio:</strong> 18/09/2025 15:12</li>
-            <li><strong>Fecha fin:</strong> 18/09/2025 15:14</li>
-            <li><strong>Duración:</strong> 0h 1m 27s</li>
+            <li><strong>Estación salida:</strong> {{ item.estacionSalida?.nombre }}</li>
+            <li><strong>Estación llegada:</strong> {{ item.estacionLlegada?.nombre || '--' }}</li>
+            <li><strong>Fecha inicio:</strong> {{ item.fechaInicio | date:'dd/MM/yyyy HH:mm:ss' }}</li>
+            <li><strong>Fecha fin:</strong> {{ item.fechaFin ? (item.fechaFin | date:'dd/MM/yyyy HH:mm:ss') : '--' }}
+            </li>
+            <li><strong>Duración:</strong> {{ item.duracionTexto }}</li>
         </ul>
     </div>
-
-    <!-- Ejemplo de otra card -->
-    <div class="alquiler-card">
-        <div class="alquiler-header">
-            <span class="serial">🚲 PTNT-15</span>
-            <span class="estado activo">Activo</span>
-        </div>
-        <ul>
-            <li><strong>Estación salida:</strong> Estacion centro</li>
-            <li><strong>Estación llegada:</strong> --</li>
-            <li><strong>Fecha inicio:</strong> 18/09/2025 16:20</li>
-            <li><strong>Fecha fin:</strong> --</li>
-            <li><strong>Duración:</strong> 0h 15m 03s</li>
-        </ul>
-    </div>
+    }
 </div>
